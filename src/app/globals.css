@@ -19,3 +19,175 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+.icon-size {
+  font-size: 3rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icon-size:hover {
+  transform: scale(1.2); /* Zoom effect on hover */
+  color: #ff6f61; /* Hover color */
+}
+
+
+/* Cover container */
+.cover-container {
+  height: 200px;
+  position: relative;
+}
+
+.profile-container {
+  position: absolute;
+  bottom: -90px;
+  left: 45%;
+  transform: translateX(0%);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: white;
+}
+
+.profile-img {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Icon styles */
+.icon-size {
+  font-size: 3rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icon-size:hover {
+  transform: scale(1.2);
+  color: #ff6f61; /* Hover color */
+}
+
+.bg-black {
+  background-color: #000;
+}
+
+/* AOS animation settings */
+[data-aos="fade-up"] {
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+[data-aos="zoom-in"] {
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .cover-container {
+    height: 150px;
+  }
+
+  .icon-size {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .cover-container {
+    height: 120px;
+  }
+  .profile-container {
+    bottom: -50px;
+    width: 120px;
+    height: 120px;
+  }
+  .icon-size {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cover-container {
+    height: 100px;
+  }
+  .profile-container {
+    bottom: -40px;
+    width: 100px;
+    height: 100px;
+  }
+  .icon-size {
+    font-size: 1.8rem;
+  }
+
+  .bg-black {
+    height: auto;
+    padding: 30px 0;
+  }
+
+  .list-unstyled {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .icon-size {
+    font-size: 2rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+@keyframes moveIcons {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.moving-icons {
+  display: flex;
+  
+  white-space: nowrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.moving-icons ul {
+  display: flex;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  animation: moveIcons 10s linear infinite;
+}
+
+/* Ensure single row on small screens */
+@media (max-width: 600px) {
+  .moving-icons ul {
+    gap: 1rem; /* Reduce gap between icons on small screens */
+  }
+}
+.moving-icons ul li svg {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Increase size on hover */
+.moving-icons ul li:hover svg {
+  transform: scale(1.2);
+}
+
+/* Adjust size for smaller screens */
+@media (max-width: 600px) {
+  .moving-icons ul li svg {
+    width: 3em;
+    height: 3em;
+  }
+}
